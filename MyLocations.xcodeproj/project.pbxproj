@@ -16,6 +16,7 @@
 		68A4FD212634A28300AC0FE2 /* LocationDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A4FD202634A28300AC0FE2 /* LocationDetailsViewController.swift */; };
 		68A4FD242634AADD00AC0FE2 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A4FD232634AADD00AC0FE2 /* Functions.swift */; };
 		68A4FD272634AE7400AC0FE2 /* CategoryPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A4FD262634AE7400AC0FE2 /* CategoryPickerViewController.swift */; };
+		68A4FD2B2634FB0D00AC0FE2 /* HudView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A4FD2A2634FB0D00AC0FE2 /* HudView.swift */; };
 		68A6E1C726287D5100D5B22F /* CurrentLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A6E1C626287D5100D5B22F /* CurrentLocationViewController.swift */; };
 		68A6E1CB26287D5E00D5B22F /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A6E1CA26287D5E00D5B22F /* SecondViewController.swift */; };
 /* End PBXBuildFile section */
@@ -32,6 +33,7 @@
 		68A4FD202634A28300AC0FE2 /* LocationDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailsViewController.swift; sourceTree = "<group>"; };
 		68A4FD232634AADD00AC0FE2 /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		68A4FD262634AE7400AC0FE2 /* CategoryPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryPickerViewController.swift; sourceTree = "<group>"; };
+		68A4FD2A2634FB0D00AC0FE2 /* HudView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HudView.swift; sourceTree = "<group>"; };
 		68A6E1C626287D5100D5B22F /* CurrentLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentLocationViewController.swift; sourceTree = "<group>"; };
 		68A6E1CA26287D5E00D5B22F /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -67,6 +69,7 @@
 			isa = PBXGroup;
 			children = (
 				68A6E1C526287D3800D5B22F /* Models */,
+				68A4FD292634FAF500AC0FE2 /* Views */,
 				68A6E1C426287D3000D5B22F /* Controllers */,
 				682969FB25FEB01800317BD4 /* AppDelegate.swift */,
 				682969FD25FEB01800317BD4 /* SceneDelegate.swift */,
@@ -77,6 +80,14 @@
 				68296A0925FEB01900317BD4 /* Info.plist */,
 			);
 			path = MyLocations;
+			sourceTree = "<group>";
+		};
+		68A4FD292634FAF500AC0FE2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				68A4FD2A2634FB0D00AC0FE2 /* HudView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		68A6E1C426287D3000D5B22F /* Controllers */ = {
@@ -176,6 +187,7 @@
 				682969FE25FEB01800317BD4 /* SceneDelegate.swift in Sources */,
 				68A6E1CB26287D5E00D5B22F /* SecondViewController.swift in Sources */,
 				68A6E1C726287D5100D5B22F /* CurrentLocationViewController.swift in Sources */,
+				68A4FD2B2634FB0D00AC0FE2 /* HudView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

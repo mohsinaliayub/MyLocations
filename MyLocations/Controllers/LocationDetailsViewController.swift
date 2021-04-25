@@ -45,15 +45,40 @@ class LocationDetailsViewController: UITableViewController {
         }
         
         dateLabel.text = format(date: Date())
+        
+        // creating a gesture recognizer to hide keyboard when user taps outside text view
+        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+        gestureRecognizer.cancelsTouchesInView = false
+        tableView.addGestureRecognizer(gestureRecognizer)
     }
     
     // MARK:- Actions
     @IBAction func done() {
-        navigationController?.popViewController(animated: true)
+        let hudView = HudView.hud(inView: navigationController!.view, animated: true)
+        hudView.text = "Tagged"
+        
+        let delayInSeconds = 0.6
+        afterDelay(delayInSeconds) {
+            hudView.hide()
+            self.navigationController?.popViewController(animated: true)
+        }
     }
     
     @IBAction func cancel() {
         navigationController?.popViewController(animated: true)
+    }
+    
+    // find where the tap was made, and at which row (& section) user tapped
+    // if tap was inside the first section & row, do nothing
+    // else hide the keyboard
+    @objc func hideKeyboard(_ gestureRecognizer: UITapGestureRecognizer) {
+        let point = gestureRecognizer.location(in: tableView)
+        let indexPath = tableView.indexPathForRow(at: point)
+        
+        if indexPath != nil && indexPath!.section == 0 && indexPath!.row == 0 {
+            return
+        }
+        descriptionTextView.resignFirstResponder()
     }
     
     // MARK:- Helper methods

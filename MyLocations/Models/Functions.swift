@@ -45,3 +45,7 @@ func string(from placemark: CLPlacemark) -> String {
     
     return line1 + "\n" + line2
 }
+
+func afterDelay(_ seconds: Double, run: @escaping () -> Void) {
+    DispatchQueue.main.asyncAfter(deadline: .now() + seconds, execute: run)
+}
