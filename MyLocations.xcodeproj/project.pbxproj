@@ -13,6 +13,9 @@
 		68296A0325FEB01800317BD4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68296A0125FEB01800317BD4 /* Main.storyboard */; };
 		68296A0525FEB01900317BD4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68296A0425FEB01900317BD4 /* Assets.xcassets */; };
 		68296A0825FEB01900317BD4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68296A0625FEB01900317BD4 /* LaunchScreen.storyboard */; };
+		68A4FD212634A28300AC0FE2 /* LocationDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A4FD202634A28300AC0FE2 /* LocationDetailsViewController.swift */; };
+		68A4FD242634AADD00AC0FE2 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A4FD232634AADD00AC0FE2 /* Functions.swift */; };
+		68A4FD272634AE7400AC0FE2 /* CategoryPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A4FD262634AE7400AC0FE2 /* CategoryPickerViewController.swift */; };
 		68A6E1C726287D5100D5B22F /* CurrentLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A6E1C626287D5100D5B22F /* CurrentLocationViewController.swift */; };
 		68A6E1CB26287D5E00D5B22F /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A6E1CA26287D5E00D5B22F /* SecondViewController.swift */; };
 /* End PBXBuildFile section */
@@ -26,6 +29,9 @@
 		68296A0425FEB01900317BD4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		68296A0725FEB01900317BD4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		68296A0925FEB01900317BD4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		68A4FD202634A28300AC0FE2 /* LocationDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailsViewController.swift; sourceTree = "<group>"; };
+		68A4FD232634AADD00AC0FE2 /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
+		68A4FD262634AE7400AC0FE2 /* CategoryPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryPickerViewController.swift; sourceTree = "<group>"; };
 		68A6E1C626287D5100D5B22F /* CurrentLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentLocationViewController.swift; sourceTree = "<group>"; };
 		68A6E1CA26287D5E00D5B22F /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -78,6 +84,8 @@
 			children = (
 				68A6E1C626287D5100D5B22F /* CurrentLocationViewController.swift */,
 				68A6E1CA26287D5E00D5B22F /* SecondViewController.swift */,
+				68A4FD202634A28300AC0FE2 /* LocationDetailsViewController.swift */,
+				68A4FD262634AE7400AC0FE2 /* CategoryPickerViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -85,6 +93,7 @@
 		68A6E1C526287D3800D5B22F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				68A4FD232634AADD00AC0FE2 /* Functions.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -159,8 +168,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68A4FD272634AE7400AC0FE2 /* CategoryPickerViewController.swift in Sources */,
+				68A4FD212634A28300AC0FE2 /* LocationDetailsViewController.swift in Sources */,
 				68296A0025FEB01800317BD4 /* ViewController.swift in Sources */,
 				682969FC25FEB01800317BD4 /* AppDelegate.swift in Sources */,
+				68A4FD242634AADD00AC0FE2 /* Functions.swift in Sources */,
 				682969FE25FEB01800317BD4 /* SceneDelegate.swift in Sources */,
 				68A6E1CB26287D5E00D5B22F /* SecondViewController.swift in Sources */,
 				68A6E1C726287D5100D5B22F /* CurrentLocationViewController.swift in Sources */,

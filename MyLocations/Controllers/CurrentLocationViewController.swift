@@ -30,12 +30,28 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
     var lastGeocodingError: Error?
     
     var timer: Timer?
+    
+    let tagLocationSegueIdentifier = "TagLocation"
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // hiding the navigation bar
+        navigationController?.isNavigationBarHidden = true
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         updateLabels()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        // showing the navigation bar again
+        navigationController?.isNavigationBarHidden = false
     }
     
     func updateLabels() {
@@ -151,6 +167,15 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
         updateLabels()
     }
     
+    // MARK:- Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == tagLocationSegueIdentifier {
+            let controller = segue.destination as! LocationDetailsViewController
+            controller.coordinate = location!.coordinate
+            controller.placemark = placemark
+        }
+    }
+    
     // MARK:- CLLocationManagerDelegate
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print("didFailWithError: \(error.localizedDescription)")
@@ -247,39 +272,6 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
             self.performingReverseGeocoding = false
             self.updateLabels()
         }
-    }
-    
-    func string(from placemark: CLPlacemark) -> String {
-        var line1 = ""
-        
-        // additional street-level information
-        if let s = placemark.subThoroughfare {
-            line1 += s + " "
-        }
-        
-        // street address
-        if let s = placemark.thoroughfare {
-            line1 += s
-        }
-        
-        var line2 = ""
-        
-        // city
-        if let s = placemark.locality {
-            line2 += s + " "
-        }
-        
-        // state
-        if let s = placemark.administrativeArea {
-            line2 += s + " "
-        }
-        
-        // postal code
-        if let s = placemark.postalCode {
-            line2 += s
-        }
-        
-        return line1 + "\n" + line2
     }
 
 }
