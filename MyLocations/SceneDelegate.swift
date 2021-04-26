@@ -35,11 +35,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let tabController = window!.rootViewController as! UITabBarController
         if let tabViewControllers = tabController.viewControllers {
-            let navController = tabViewControllers[0] as! UINavigationController
-            let controller = navController.viewControllers[0] as! CurrentLocationViewController
-            controller.managedObjectContext = managedObjectContext
-            // printing the location of database file
-//            print(applicationDocumentsDirectory)
+            var navController = tabViewControllers[0] as! UINavigationController
+            let controller1 = navController.viewControllers.first as! CurrentLocationViewController
+            controller1.managedObjectContext = managedObjectContext
+            
+            navController = tabViewControllers[1] as! UINavigationController
+            let controller2 = navController.viewControllers.first as! LocationsViewController
+            controller2.managedObjectContext = managedObjectContext
+            let _ = controller2.view
         }
         listenForFatalCoreDataNotifications()
     }
