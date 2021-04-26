@@ -36,16 +36,29 @@ func string(from placemark: CLPlacemark) -> String {
     
     // postal code
     if let s = placemark.postalCode {
-        line2 += s + ", "
+        line2 += s //+ ", "
     }
-    
-    if let s = placemark.country {
-        line2 += s
-    }
+//
+//    if let s = placemark.country {
+//        line2 += s
+//    }
     
     return line1 + "\n" + line2
 }
 
 func afterDelay(_ seconds: Double, run: @escaping () -> Void) {
     DispatchQueue.main.asyncAfter(deadline: .now() + seconds, execute: run)
+}
+
+let applicationDocumentsDirectory: URL = {
+    let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+    return paths[0]
+}()
+
+// Core Data Failure Notification
+let coreDataSaveFailedNotification = Notification.Name("CoreDataSaveFailedNotification")
+
+func fatalCoreDataError(_ error: Error) {
+    print("*** Fatal Error: \(error)")
+    NotificationCenter.default.post(name: coreDataSaveFailedNotification, object: nil)
 }

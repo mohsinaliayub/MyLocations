@@ -6,11 +6,23 @@
 //
 
 import UIKit
+import CoreData
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    lazy var persistentContainer: NSPersistentContainer = {
+        let container = NSPersistentContainer(name: "DataModel")
+        container.loadPersistentStores { (storeDescription, error) in
+            if let error = error {
+                fatalError("Couldn't load data store: \(error.localizedDescription)")
+            }
+        }
+        
+        return container
+    }()
+    
+    lazy var managedObjectContext: NSManagedObjectContext = persistentContainer.viewContext
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
