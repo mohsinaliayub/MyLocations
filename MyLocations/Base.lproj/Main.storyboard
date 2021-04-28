@@ -190,10 +190,20 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="o4H-JX-hW7">
+                                                    <rect key="frame" x="100" y="11" width="276.5" height="22"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="22" id="7Qs-mI-0tz"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="o4H-JX-hW7" secondAttribute="trailing" id="Le7-oa-M7M"/>
+                                                <constraint firstItem="o4H-JX-hW7" firstAttribute="leading" secondItem="Agy-N2-Ftq" secondAttribute="trailing" id="MzJ-1l-IBL"/>
                                                 <constraint firstItem="Agy-N2-Ftq" firstAttribute="leading" secondItem="xej-dh-zMK" secondAttribute="leadingMargin" id="VeT-cm-0V4"/>
                                                 <constraint firstItem="Agy-N2-Ftq" firstAttribute="centerY" secondItem="xej-dh-zMK" secondAttribute="centerY" id="dUW-1L-CNd"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="o4H-JX-hW7" secondAttribute="bottom" id="kR8-t1-avq"/>
+                                                <constraint firstItem="o4H-JX-hW7" firstAttribute="top" secondItem="xej-dh-zMK" secondAttribute="topMargin" id="zxf-0w-D7D"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -323,10 +333,13 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="addPhotoLabel" destination="Agy-N2-Ftq" id="IvK-Mf-0wa"/>
                         <outlet property="addressLabel" destination="dGR-Sm-UTM" id="OS4-nx-OB1"/>
                         <outlet property="categoryLabel" destination="UMT-V7-q5S" id="RY7-ZG-7uB"/>
                         <outlet property="dateLabel" destination="HiQ-gg-5nw" id="hBC-SH-uKx"/>
                         <outlet property="descriptionTextView" destination="rBg-U4-aov" id="SG5-3q-ksB"/>
+                        <outlet property="imageHeight" destination="7Qs-mI-0tz" id="J2r-rO-XOj"/>
+                        <outlet property="imageView" destination="o4H-JX-hW7" id="hfc-zn-q8z"/>
                         <outlet property="latitudeLabel" destination="PXC-0M-Tca" id="LRB-Za-b6L"/>
                         <outlet property="longitudeLabel" destination="Opp-w2-vjL" id="PUg-If-9PJ"/>
                     </connections>
@@ -413,31 +426,41 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="100" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vqw-B9-aqE">
-                                            <rect key="frame" x="20" y="11" width="374" height="21"/>
+                                            <rect key="frame" x="80" y="11" width="314" height="21"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JZb-ZF-UKX">
-                                            <rect key="frame" x="20" y="37" width="374" height="17"/>
+                                            <rect key="frame" x="80" y="37" width="314" height="17"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="f6R-1T-lbP">
+                                            <rect key="frame" x="20" y="3" width="52" height="52"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="52" id="5nw-37-GOE"/>
+                                                <constraint firstAttribute="height" constant="52" id="jbn-ZX-M4U"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="vqw-B9-aqE" firstAttribute="leading" secondItem="f6R-1T-lbP" secondAttribute="trailing" constant="8" id="GuM-4y-hWD"/>
                                         <constraint firstAttribute="trailing" secondItem="JZb-ZF-UKX" secondAttribute="trailing" constant="20" symbolic="YES" id="RZR-y9-JgA"/>
                                         <constraint firstItem="vqw-B9-aqE" firstAttribute="trailing" secondItem="UeY-77-WcL" secondAttribute="trailingMargin" id="YyR-6S-DT8"/>
+                                        <constraint firstItem="f6R-1T-lbP" firstAttribute="leading" secondItem="UeY-77-WcL" secondAttribute="leading" constant="20" symbolic="YES" id="ZX5-hi-2Qy"/>
                                         <constraint firstItem="vqw-B9-aqE" firstAttribute="top" secondItem="UeY-77-WcL" secondAttribute="topMargin" id="dbv-af-COK"/>
+                                        <constraint firstItem="JZb-ZF-UKX" firstAttribute="leading" secondItem="f6R-1T-lbP" secondAttribute="trailing" constant="8" id="f64-qk-xJa"/>
                                         <constraint firstItem="JZb-ZF-UKX" firstAttribute="top" secondItem="vqw-B9-aqE" secondAttribute="bottom" constant="5" id="hoA-6S-Q4J"/>
                                         <constraint firstAttribute="bottom" secondItem="JZb-ZF-UKX" secondAttribute="bottom" constant="4" id="pG8-2C-rri"/>
-                                        <constraint firstItem="vqw-B9-aqE" firstAttribute="leading" secondItem="UeY-77-WcL" secondAttribute="leadingMargin" id="t4b-LK-sUN"/>
-                                        <constraint firstItem="JZb-ZF-UKX" firstAttribute="leading" secondItem="UeY-77-WcL" secondAttribute="leading" constant="20" symbolic="YES" id="x9G-kv-epc"/>
+                                        <constraint firstItem="f6R-1T-lbP" firstAttribute="centerY" secondItem="UeY-77-WcL" secondAttribute="centerY" id="pxI-kc-n6S"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="addressLabel" destination="JZb-ZF-UKX" id="AZq-cj-hTP"/>
                                     <outlet property="descriptionLabel" destination="vqw-B9-aqE" id="TBT-tI-FKK"/>
+                                    <outlet property="photoImageView" destination="f6R-1T-lbP" id="olV-0w-clE"/>
                                     <segue destination="3JH-8I-SWc" kind="show" identifier="EditLocation" id="qwu-cf-wax"/>
                                 </connections>
                             </tableViewCell>
@@ -555,7 +578,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="fdk-cA-3No"/>
+        <segue reference="qwu-cf-wax"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Locations" width="30" height="30"/>

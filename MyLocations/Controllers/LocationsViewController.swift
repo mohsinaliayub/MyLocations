@@ -90,8 +90,11 @@ class LocationsViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
+            // get location object user wanted to delete, remove its file from documents directory
+            // and delete data from data store
             let location = fetchedResultsController.object(at: indexPath)
             
+            location.removePhotoFile()
             managedObjectContext.delete(location)
             
             do {
