@@ -106,6 +106,18 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         }
         
     }
+    
+    func customizeAppearance() {
+        UINavigationBar.appearance().tintColor = UIColor.black
+        UINavigationBar.appearance().titleTextAttributes = [
+            NSAttributedString.Key.foregroundColor: UIColor.white
+        ]
+        
+        UITabBar.appearance().barTintColor = UIColor.black
+        
+        let tintColor = UIColor(red: 255/255.0, green: 238/255.0, blue: 136/255.0, alpha: 1.0)
+        UITabBar.appearance().tintColor = tintColor
+    }
 
 }
 

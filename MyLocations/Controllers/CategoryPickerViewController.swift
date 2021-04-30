@@ -40,6 +40,10 @@ class CategoryPickerViewController: UITableViewController {
         cell.textLabel?.text = categoryName
         cell.accessoryType = categoryName == selectedCategoryName ? .checkmark : .none
         
+        let selection = UIView(frame: CGRect.zero)
+        selection.backgroundColor = UIColor(white: 1.0, alpha: 0.3)
+        cell.selectedBackgroundView = selection
+        
         return cell
     }
     
